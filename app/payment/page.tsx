@@ -1,10 +1,10 @@
 "use client";
 
+import { Suspense, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
-import { useState } from "react";
 import "../globalss.css";
 
-export default function PaymentPage() {
+function PaymentContent() {
   const params = useSearchParams();
   const router = useRouter();
 
@@ -66,5 +66,13 @@ export default function PaymentPage() {
         </button>
       </div>
     </div>
+  );
+}
+
+export default function PaymentPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <PaymentContent />
+    </Suspense>
   );
 }
