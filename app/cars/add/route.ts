@@ -8,7 +8,17 @@ export async function POST(req: Request) {
 
     const file = path.join(process.cwd(), "data/cardetails.json");
 
-    let data = { cars: [] };
+    let data: {
+      cars: {
+        id: number;
+        name: any;
+        price: number;
+        image: any;
+        mileage: any;
+        seats: any;
+        rating: any;
+      }[];
+    } = { cars: [] };
 
     if (fs.existsSync(file)) {
       const raw = fs.readFileSync(file, "utf8");
