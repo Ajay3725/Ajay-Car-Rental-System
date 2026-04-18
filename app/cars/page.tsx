@@ -4,8 +4,19 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import "../globalss.css"
 
+interface Car {
+  id: number;
+  name: string;
+  price: number;
+  image: string;
+  mileage: string;
+  seats: string;
+  rating: string;
+}
+
 export default function Cars() {
   const [cars, setCars] = useState<any[]>([]);
+  const [cars, setCars] = useState<Car[]>([]);
   const router = useRouter();
 
   useEffect(() => {
@@ -22,6 +33,7 @@ export default function Cars() {
   }, []);
 
   function handleBook(car: any) {
+  function handleBook(car: Car) {
     const role = localStorage.getItem("role");
 
     if (role === "guest") {
