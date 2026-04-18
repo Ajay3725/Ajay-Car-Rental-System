@@ -15,7 +15,6 @@ interface Car {
 }
 
 export default function Cars() {
-  const [cars, setCars] = useState<any[]>([]);
   const [cars, setCars] = useState<Car[]>([]);
   const router = useRouter();
 
@@ -32,7 +31,6 @@ export default function Cars() {
       .catch(() => setCars([]));
   }, []);
 
-  function handleBook(car: any) {
   function handleBook(car: Car) {
     const role = localStorage.getItem("role");
 

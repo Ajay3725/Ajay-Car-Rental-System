@@ -3,6 +3,16 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
+interface Car {
+  id: number;
+  name: string;
+  price: number | string;
+  image: string;
+  mileage: string;
+  seats: string;
+  rating: string;
+}
+
 export default function Admin() {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
@@ -11,7 +21,7 @@ export default function Admin() {
   const [seats, setSeats] = useState("");
   const [rating, setRating] = useState("");
 
-  const [cars, setCars] = useState<any[]>([]);
+  const [cars, setCars] = useState<Car[]>([]);
   const router = useRouter();
 
   useEffect(() => {
@@ -43,7 +53,7 @@ export default function Admin() {
     router.refresh();
   }
 
-  async function deleteCar(id: any) {
+  async function deleteCar(id: number) {
     await fetch("/cars/delete", {
       method: "DELETE",
       headers: {
@@ -55,7 +65,7 @@ export default function Admin() {
     router.refresh();
   }
 
-  async function updateCar(car: any) {
+  async function updateCar(car: Car) {
     await fetch("/cars/update", {
       method: "PUT",
       headers: {
@@ -67,9 +77,9 @@ export default function Admin() {
     router.refresh();
   }
 
-  const handleCarChange = (index: number, field: string, value: string) => {
+  const handleCarChange = (index: number, field: keyof Car, value: string) => {
     const newCars = [...cars];
-    newCars[index] = { ...newCars[index], [field]: value };
+    newCars[index] = { ...newCars[index], [field]: value } as Car;
     setCars(newCars);
   };
 
