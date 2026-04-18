@@ -88,7 +88,7 @@ export default function Admin() {
 
       <div className="oiiiii">
         <div className="adminBox">
-          <h2>hdshfdsnbdshbfhdsb</h2>
+
           <h2>Admin Panel</h2>
 
           <input placeholder="Name" onChange={(e) => setName(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && addCar()} />
