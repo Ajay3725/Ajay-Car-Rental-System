@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Admin() {
   const [name, setName] = useState("");
@@ -11,6 +12,7 @@ export default function Admin() {
   const [rating, setRating] = useState("");
 
   const [cars, setCars] = useState<any[]>([]);
+  const router = useRouter();
 
   useEffect(() => {
     fetch("/api/admin/cars")
@@ -38,7 +40,7 @@ export default function Admin() {
     });
 
     alert("Car added!");
-    location.reload();
+    router.refresh();
   }
 
   async function deleteCar(id: any) {
@@ -50,7 +52,7 @@ export default function Admin() {
       body: JSON.stringify({ id })
     });
 
-    location.reload();
+    router.refresh();
   }
 
   async function updateCar(car: any) {
@@ -62,7 +64,7 @@ export default function Admin() {
       body: JSON.stringify(car)
     });
 
-    location.reload();
+    router.refresh();
   }
 
   const handleCarChange = (index: number, field: string, value: string) => {

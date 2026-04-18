@@ -56,7 +56,7 @@ export default function Home() {
           type="text"
           onChange={(e) => setUsername(e.target.value)}
         />
-        <br />r
+        <br />
         <label>Enter Password:           </label>
         <input
           type="password"

@@ -1,10 +1,10 @@
 "use client";
 
 import { useSearchParams, useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import "../globalss.css"
 
-export default function BookingPage() {
+function BookingContent() {
   const params = useSearchParams();
   const router = useRouter();
 
@@ -52,5 +52,13 @@ export default function BookingPage() {
         Continue to Payment
       </button>
     </div>
+  );
+}
+
+export default function BookingPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <BookingContent />
+    </Suspense>
   );
 }
