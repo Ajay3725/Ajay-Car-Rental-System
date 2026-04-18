@@ -1,0 +1,215 @@
+.loginpage {
+  text-align: center;
+}
+
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("/redtail.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.login2 {
+  border: 2px solid #1b1a1a;
+  padding: 30px;
+  width: 350px;
+  color: rgb(184, 89, 49);
+  background: white;
+  border-radius: 10px;
+}
+
+
+.hi {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 8px;
+  border: 1px solid #b01a1a;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+.login2 button {
+  width: 100%;
+  padding: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+
+.cargrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+
+.carcard {
+  width: 240px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  text-align: center;
+  background: white;
+  overflow: hidden;
+}
+
+
+.car-image {
+  width: 370px;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+
+.ajay {
+  background-image: url("/speed.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+
+.carcard {
+  background: rgba(255,255,255,0.9);
+}
+
+
+.dateBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+
+.calcBtn {
+  width: 100%;
+  padding: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.payBtn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.total {
+  margin-top: 15px;
+}
+
+.price {
+  font-weight: bold;
+}
+
+
+.marii {
+  text-align: center;
+  padding-top: 50px;
+  color: aliceblue;
+  background-image: url("/balcspeescar.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
+.marii input {
+  padding: 8px;
+  margin: 8px;
+  width: 200px;
+}
+
+.marii button {
+  padding: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.marii h3 {
+  margin-top: 15px;
+}
+
+/* PAYMENT PAGE */
+.payment {
+  text-align: center;
+  padding-top: 50px;
+  background-image: url("/couple.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
+.payment-box {
+  border: 1px solid black;
+  width: 300px;
+  margin: auto;
+  padding: 20px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 10px;
+}
+
+
+.method {
+  display: block;
+  border: 1px solid gray;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  background: white;
+}
+
+
+.pay-btn {
+  padding: 8px 15px;
+  margin-top: 10px;
+  cursor: pointer;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+.login{
+  padding-left: 1150px;
+  padding-bottom: 150px;
+  padding-right: 70px;
+}
+.login2{
+  padding-left: 60px;
+  padding-top: 100px;
+}
+.sir {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.car-item {
+  text-align: center;
+  color: black;
+}
