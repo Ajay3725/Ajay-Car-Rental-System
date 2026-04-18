@@ -38,9 +38,6 @@ export default function Cars() {
   return (
     <div className="mudiyala">
 
-  
-      <marquee behavior="scroll" direction="left" scrollamount="10">
-
   <div className="sir">
 
     <div className="car-item">
@@ -74,8 +71,6 @@ export default function Cars() {
     </div>
 
   </div>
-
-</marquee>
 
       <h1>Available Cars</h1>
 
