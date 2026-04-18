@@ -3,6 +3,7 @@
 import { useSearchParams, useRouter } from "next/navigation";
 import { useState } from "react";
 import "../globalss.css"
+
 export default function BookingPage() {
   const params = useSearchParams();
   const router = useRouter();
