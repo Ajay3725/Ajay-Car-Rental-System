@@ -72,12 +72,9 @@ input {
 
 
 .car-image {
-  width: 370px;
-  height: 200px;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto;
-  border-radius: 10px;
+  width: 320px;
+  height: 180px;
+
 }
 
 
