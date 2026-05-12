@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
+import fs from "fs"; //read file
+import path from "path"; //file location find
 
 export async function GET() {
   try {

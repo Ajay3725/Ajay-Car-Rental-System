@@ -41,6 +41,18 @@
       "username": "chandru",
       "password": "chandru",
       "role": "user"
+    },
+    {
+      "id": 1776831476378,
+      "username": "priya",
+      "password": "priya",
+      "role": "user"
+    },
+    {
+      "id": 1776831539417,
+      "username": "hari",
+      "password": "hari",
+      "role": "user"
     }
   ]
 }

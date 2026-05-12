@@ -1,0 +1,74 @@
+{
+  "booking": [
+    {
+      "id": 1746812345678,
+      "name": "Kia",
+      "price": 2800,
+      "mileage": "25 KM",
+      "seats": "5",
+      "rating": "4.5 ⭐⭐⭐⭐⭐",
+      "image": "/Kia.avif",
+      "bookedAt": "2026-05-11T10:00:00.000Z"
+    },
+    {
+      "id": 1778504798690,
+      "name": "Honda City",
+      "price": "200",
+      "mileage": "19 KM",
+      "seats": "5",
+      "rating": "4.5 ⭐⭐",
+      "image": "/Honda.jpg",
+      "bookedAt": "2026-05-11T13:06:38.690Z"
+    },
+    {
+      "id": 1778504823345,
+      "name": "Mahindra Thar",
+      "price": 2700,
+      "mileage": "28 KM",
+      "seats": "5",
+      "rating": "4.5⭐⭐⭐",
+      "image": "/maruthithar.jpg",
+      "bookedAt": "2026-05-11T13:07:03.345Z"
+    },
+    {
+      "id": 1778504837318,
+      "name": "Mahindra Thar",
+      "price": 2700,
+      "mileage": "28 KM",
+      "seats": "5",
+      "rating": "4.5⭐⭐⭐",
+      "image": "/maruthithar.jpg",
+      "bookedAt": "2026-05-11T13:07:17.318Z"
+    },
+    {
+      "id": 1778505287995,
+      "name": "Honda City",
+      "price": "200",
+      "mileage": "19 KM",
+      "seats": "5",
+      "rating": "4.5 ⭐⭐",
+      "image": "/Honda.jpg",
+      "bookedAt": "2026-05-11T13:14:47.995Z"
+    },
+    {
+      "id": 1778505762484,
+      "name": "Kia",
+      "price": 2800,
+      "mileage": "25 KM",
+      "seats": "5",
+      "rating": "4.5 ⭐⭐⭐⭐⭐",
+      "image": "/Kia.avif",
+      "bookedAt": "2026-05-11T13:22:42.484Z"
+    },
+    {
+      "id": 1778505954482,
+      "name": "Kia",
+      "price": 2800,
+      "mileage": "25 KM",
+      "seats": "5",
+      "rating": "4.5 ⭐⭐⭐⭐⭐",
+      "image": "/Kia.avif",
+      "bookedAt": "2026-05-11T13:25:54.482Z"
+    }
+  ]
+}

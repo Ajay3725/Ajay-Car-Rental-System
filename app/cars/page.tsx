@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { addBooking } from "../actions/booking"; // Import from the new actions directory
 import "../globalss.css"
 
 interface Car {
@@ -31,7 +32,7 @@ export default function Cars() {
       .catch(() => setCars([]));
   }, []);
 
-  function handleBook(car: Car) {
+  async function handleBook(car: Car) { // Make this function async
     const role = localStorage.getItem("role");
 
     if (role === "guest") {
@@ -39,10 +40,25 @@ export default function Cars() {
       router.push("/");
       return;
     }
+    
+    // Store booking in database via Server Action
+    const result = await addBooking({
+      name: car.name,
+      price: car.price,
+      mileage: car.mileage,
+      seats: car.seats,
+      rating: car.rating,
+      image: car.image,
+    });
 
-    router.push(
-      `/booking?name=${car.name}&price=${car.price}&mileage=${car.mileage}&seats=${car.seats}&rating=${car.rating}&image=${car.image}`
-    );
+    if (result.success) {
+      // Proceed to the booking flow if DB storage was successful
+      router.push(
+        `/booking?name=${car.name}&price=${car.price}&mileage=${car.mileage}&seats=${car.seats}&rating=${car.rating}&image=${car.image}`
+      );
+    } else {
+      alert("Booking failed: " + result.message);
+    }
   }
 
   return (

@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 350px;
   background-image: url("/redtail.jpg");
   background-size: cover;
   background-position: center;
@@ -18,7 +18,7 @@
   border: 2px solid #1b1a1a;
   padding: 30px;
   width: 350px;
-  color: rgb(184, 89, 49);
+  color: rgb(100, 39, 12);
   background: white;
   border-radius: 10px;
 }
@@ -160,6 +160,7 @@ input {
   background-size: cover;
   background-position: center;
   min-height: 100vh;
+  background-color: #650ea3;
 }
 
 .payment-box {
@@ -167,7 +168,7 @@ input {
   width: 300px;
   margin: auto;
   padding: 20px;
-  background: rgba(255,255,255,0.9);
+  background: rgba(192, 90, 90, 0.9);
   border-radius: 10px;
 }
 
@@ -210,3 +211,4 @@ input {
   text-align: center;
   color: black;
 }
+
