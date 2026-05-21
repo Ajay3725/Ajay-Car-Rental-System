@@ -24,17 +24,22 @@ export default function Admin() {
   const [cars, setCars] = useState<Car[]>([]);
   const router = useRouter();
 
-  useEffect(() => {
+  const fetchCars = () => {
     fetch("/api/admin/cars")
       .then((res) => res.json())
       .then((data) => {
         setCars(data || []);
       })
       .catch(() => setCars([]));
+  };
+
+  useEffect(() => {
+    fetchCars();
   }, []);
 
   async function addCar() {
-    await fetch("/cars/add", {
+    if (!name || !price) return alert("Please enter at least a name and price.");
+    await fetch("/api/admin/cars/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -50,11 +55,17 @@ export default function Admin() {
     });
 
     alert("Car added!");
-    router.refresh();
+    setName("");
+    setPrice("");
+    setImage("");
+    setMileage("");
+    setSeats("");
+    setRating("");
+    fetchCars();
   }
 
   async function deleteCar(id: number) {
-    await fetch("/cars/delete", {
+    await fetch("/api/admin/cars/delete", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json"
@@ -62,11 +73,11 @@ export default function Admin() {
       body: JSON.stringify({ id })
     });
 
-    router.refresh();
+    fetchCars();
   }
 
   async function updateCar(car: Car) {
-    await fetch("/cars/update", {
+    await fetch("/api/admin/cars/update", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
@@ -74,7 +85,7 @@ export default function Admin() {
       body: JSON.stringify(car)
     });
 
-    router.refresh();
+    fetchCars();
   }
 
   const handleCarChange = (index: number, field: keyof Car, value: string) => {
@@ -91,12 +102,12 @@ export default function Admin() {
 
           <h2>Admin Panel</h2>
 
-          <input placeholder="Name" onChange={(e) => setName(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && addCar()} />
-          <input placeholder="Price" onChange={(e) => setPrice(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && addCar()} />
-          <input placeholder="Image URL" onChange={(e) => setImage(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && addCar()} />
-          <input placeholder="Mileage" onChange={(e) => setMileage(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && addCar()} />
-          <input placeholder="Seats" onChange={(e) => setSeats(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && addCar()} />
-          <input placeholder="Rating" onChange={(e) => setRating(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && addCar()} />
+          <input placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && addCar()} />
+          <input placeholder="Price" value={price} onChange={(e) => setPrice(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && addCar()} />
+          <input placeholder="Image URL" value={image} onChange={(e) => setImage(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && addCar()} />
+          <input placeholder="Mileage" value={mileage} onChange={(e) => setMileage(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && addCar()} />
+          <input placeholder="Seats" value={seats} onChange={(e) => setSeats(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && addCar()} />
+          <input placeholder="Rating" value={rating} onChange={(e) => setRating(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && addCar()} />
 
           <button onClick={addCar}>Add Car</button>
 

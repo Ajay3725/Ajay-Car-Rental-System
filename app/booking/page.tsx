@@ -8,8 +8,8 @@ function BookingContent() {
   const params = useSearchParams();
   const router = useRouter();
 
-  const name = params.get("name");
-  const pricePerDay = Number(params.get("price"));
+  const name = params.get("name") || "Car";
+  const pricePerDay = Number(params.get("price")) || 0;
 
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
@@ -17,6 +17,11 @@ function BookingContent() {
   const [totalPrice, setTotalPrice] = useState(0);
 
   function calculatePrice() {
+    if (!startDate || !endDate) {
+      alert("Please select both start and end dates.");
+      return;
+    }
+
     const start = new Date(startDate);
     const end = new Date(endDate);
 
@@ -31,6 +36,10 @@ function BookingContent() {
   }
 
   function goToPayment() {
+    if (totalPrice <= 0) {
+      alert("Please calculate a valid price before continuing.");
+      return;
+    }
     router.push(`/payment?name=${name}&total=${totalPrice}`);
   }
 

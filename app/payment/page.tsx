@@ -8,8 +8,8 @@ function PaymentContent() {
   const params = useSearchParams();
   const router = useRouter();
 
-  const name = params.get("name");
-  const total = params.get("total");
+  const name = params.get("name") || "Booking";
+  const total = params.get("total") || "0";
 
   const [method, setMethod] = useState("UPI");
 

@@ -53,6 +53,12 @@
       "username": "hari",
       "password": "hari",
       "role": "user"
+    },
+    {
+      "id": 1779376317306,
+      "username": "hello",
+      "password": "hello",
+      "role": "user"
     }
   ]
 }
