@@ -15,7 +15,9 @@ export async function addBooking(carDetails: {
 
     const file = path.join(process.cwd(), "data/booking.json");
 
-    let data = { booking: [] };
+    let data: {
+      booking: any[];
+    } = { booking: [] };
 
     // check file exists
     if (fs.existsSync(file)) {
