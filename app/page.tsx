@@ -38,39 +38,37 @@ export default function Home() {
 
   return (
     <div className="loginpage">
+      <h1 className="page-heading">User Page</h1>
 
-  <div className="section">
-    <p>Welcome To Car Rental</p>
-    <h1 className="heading">Save up to 70% on car rentals</h1>
-    <p>Clear prices, no surprises</p>
-    <p>✔️ Trusted by 7M travelers || ✔️ 24/7 Support || ✔️ Free Cancellation</p>
-  </div>
+      <div className="section">
+        <p>Welcome To Car Rental</p>
+        <h1 className="heading">Save up to 70% on car rentals</h1>
+        <p>Clear prices, no surprises</p>
+        <p>✔️ Trusted by 7M travelers || ✔️ 24/7 Support || ✔️ Free Cancellation</p>
+      </div>
 
-  <div className="login">
-    <div className="login2">
+      <div className="login">
+        <div className="login2">
+          <h2>Login</h2>
 
-      <h2>Login</h2>
+          <label>Enter Your Name: </label>
+          <input
+            type="text"
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <br />
+          <label>Enter Password: </label>
+          <input
+            type="password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
 
-        <label>Enter Your Name:   </label>
-        <input
-          type="text"
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <br />
-        <label>Enter Password:           </label>
-        <input
-          type="password"
-          onChange={(e) => setPassword(e.target.value)}
-        />
+          <button onClick={login}>Login</button>
+          <button onClick={guest}>Guest</button>
 
-      <button onClick={login}>Login</button>
-      <button onClick={guest}>Guest</button>
-
-      <p>New user? <a href="/signup">Signup</a></p>
-
+          <p>New user? <a href="/signup">Signup</a></p>
+        </div>
+      </div>
     </div>
-  </div>
-
-</div>
   );
 }

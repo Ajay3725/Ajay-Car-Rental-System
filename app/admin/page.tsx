@@ -96,6 +96,7 @@ export default function Admin() {
 
   return (
     <div>
+      <h1 className="page-heading">Admin Page</h1>
 
       <div className="oiiiii">
         <div className="adminBox">

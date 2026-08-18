@@ -1,12 +1,13 @@
 "use client";
 
 import { useSearchParams, useRouter } from "next/navigation";
-import { useState, Suspense } from "react";
+import { useState, Suspense, useEffect } from "react";
 import "../globalss.css"
 
 function BookingContent() {
   const params = useSearchParams();
   const router = useRouter();
+  const [isGuest, setIsGuest] = useState(false);
 
   const name = params.get("name") || "Car";
   const pricePerDay = Number(params.get("price")) || 0;
@@ -15,6 +16,11 @@ function BookingContent() {
   const [endDate, setEndDate] = useState("");
 
   const [totalPrice, setTotalPrice] = useState(0);
+
+  useEffect(() => {
+    const role = localStorage.getItem("role");
+    setIsGuest(role === "guest");
+  }, []);
 
   function calculatePrice() {
     if (!startDate || !endDate) {
@@ -44,22 +50,58 @@ function BookingContent() {
   }
 
   return (
-    <div className=" marii">
-      <h1>Booking Page</h1>
+    <div className="booking-page">
+      <div className="booking-card">
+        <div className="booking-header">
+          <span className="booking-badge">Book Your Ride</span>
+          <h1>Plan your trip</h1>
+        </div>
 
-      <h2>{name}</h2>
-      <p>Price per day: ₹{pricePerDay}</p>
+        <img
+          className="booking-hero-image"
+          src="/Toyota.webp"
+          alt="Car rental"
+        />
 
-      <input type="date" onChange={(e) => setStartDate(e.target.value)} />
-      <input type="date" onChange={(e) => setEndDate(e.target.value)} />
+        <div className="booking-car-box">
+          <div>
+            <p className="booking-label">Selected Car</p>
+            <h2>{name}</h2>
+          </div>
+          <div className="booking-price-box">
+            <p>₹{pricePerDay}</p>
+            <span>per day</span>
+          </div>
+        </div>
 
-      <button onClick={calculatePrice}>Calculate Price</button>
+        <div className="booking-summary">
+          <div>
+            <span>Price per day</span>
+            <strong>₹{pricePerDay}</strong>
+          </div>
+          <div>
+            <span>Total</span>
+            <strong>₹{totalPrice || 0}</strong>
+          </div>
+        </div>
 
-      <h3>Total: ₹{totalPrice}</h3>
+        <div className="booking-date-row">
+          <label>
+            <span>Pickup Date</span>
+            <input type="date" onChange={(e) => setStartDate(e.target.value)} />
+          </label>
 
-      <button onClick={goToPayment}>
-        Continue to Payment
-      </button>
+          <label>
+            <span>Return Date</span>
+            <input type="date" onChange={(e) => setEndDate(e.target.value)} />
+          </label>
+        </div>
+
+        <div className="booking-actions">
+          <button className="secondary-btn" onClick={calculatePrice}>Calculate Total</button>
+          <button className="primary-btn" onClick={goToPayment}>Continue</button>
+        </div>
+      </div>
     </div>
   );
 }

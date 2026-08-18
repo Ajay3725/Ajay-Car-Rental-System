@@ -1,17 +1,50 @@
-.loginpage {
+.page-heading {
   text-align: center;
+  margin: 20px 0 10px;
+  color: #1b1a1a;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
+.loginpage {
+  text-align: center;
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #fff2f2 0%, #fffaf3 40%, #f3f4f6 100%);
+}
+
+.section {
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+.section p {
+  margin: 8px 0;
+}
+
+.heading {
+  margin: 10px 0;
+  font-size: 2.4rem;
+  color: #b91c1c;
+}
 
 .login {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 350px;
-  background-image: url("/redtail.jpg");
+  min-height: 360px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("/redtail.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 18px 35px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login:hover {
+  transform: scale(1.01);
+  box-shadow: 0 22px 42px rgba(0,0,0,0.18);
 }
 
 .login2 {
@@ -19,10 +52,16 @@
   padding: 30px;
   width: 350px;
   color: rgb(100, 39, 12);
-  background: white;
+  background: rgba(255, 255, 255, 0.92);
   border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+.login2:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 18px 30px rgba(0,0,0,0.15);
+}
 
 .hi {
   display: flex;
@@ -32,6 +71,7 @@
 
 label {
   margin-bottom: 5px;
+  font-weight: 600;
 }
 
 input {
@@ -40,15 +80,35 @@ input {
   border-radius: 5px;
   width: 100%;
   box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+input:focus {
+  outline: none;
+  border-color: #dc2626;
+  box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.08);
+}
 
 .login2 button {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   margin-top: 10px;
   cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  color: white;
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
+
+.login2 button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 16px rgba(185, 28, 28, 0.25);
+  filter: brightness(1.04);
+}
+
+
 
 
 .cargrid {
@@ -68,27 +128,142 @@ input {
   text-align: center;
   background: white;
   overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+.carcard:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.22);
+}
 
 .car-image {
   width: 320px;
   height: 180px;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
 
+.carcard:hover .car-image {
+  transform: scale(1.04);
 }
 
 
 .ajay {
-  background-image: url("/speed.jpg");
-  background-size: cover;
-  background-position: center;
+  position: relative;
   min-height: 100vh;
   padding: 20px;
+  background: linear-gradient(135deg, #0f0f1e 0%, #1a0a2e 50%, #16213e 100%);
+  overflow: hidden;
 }
 
+.ajay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at top left, rgba(255, 0, 127, 0.15), transparent 35%),
+    radial-gradient(circle at top right, rgba(0, 150, 255, 0.15), transparent 35%),
+    radial-gradient(circle at bottom left, rgba(255, 0, 127, 0.12), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(0, 150, 255, 0.12), transparent 40%);
+  pointer-events: none;
+  box-shadow: inset 0 0 100px rgba(255, 0, 127, 0.1);
+}
+
+.ajay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ff007f 0%, #0096ff 50%, #ff007f 100%);
+  box-shadow: 0 0 20px rgba(255, 0, 127, 0.6), 0 0 40px rgba(0, 150, 255, 0.4);
+}
+
+.guest-mode .ajay {
+  background: linear-gradient(135deg, #f8d7da, #e2e8f0);
+  background-size: cover;
+  background-position: center;
+}
+
+.customer-mode .ajay {
+  background: linear-gradient(135deg, #0f0f1e 0%, #1a0a2e 50%, #16213e 100%);
+}
+
+.guest-mode .carcard {
+  background: rgba(255, 255, 255, 0.92);
+}
 
 .carcard {
   background: rgba(255,255,255,0.9);
+}
+
+.price-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.discount-badge {
+  background: #fee2e2;
+  color: #b91c1c;
+  border-radius: 999px;
+  padding: 4px 8px;
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.new-price {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #b91c1c;
+  margin: 6px 0;
+}
+
+.carcard button {
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #d62828, #b71c1c);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.carcard button:hover {
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+  transform: scale(1.03);
+}
+
+.guest-mode .carcard button {
+  background: linear-gradient(135deg, #ff9800, #ff6f00);
+}
+
+.guest-mode .carcard button:hover {
+  background: linear-gradient(135deg, #ffb74d, #ff8c00);
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(255, 152, 0, 0.3);
+}
+
+.car-item {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.car-item:hover {
+  transform: translateY(-4px);
+  opacity: 0.95;
 }
 
 
@@ -126,71 +301,303 @@ input {
 }
 
 
-.marii {
-  text-align: center;
-  padding-top: 50px;
-  color: aliceblue;
-  background-image: url("/balcspeescar.jpg");
+.booking-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  background-image: linear-gradient(rgba(15, 23, 42, 0.38), rgba(15, 23, 42, 0.38)), url("/showroom.jpg");
   background-size: cover;
   background-position: center;
-  min-height: 100vh;
+  background-repeat: no-repeat;
 }
 
-.marii input {
-  padding: 8px;
-  margin: 8px;
-  width: 200px;
+.booking-card {
+  width: min(520px, 100%);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  border-radius: 24px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.16);
+  padding: 28px;
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.5s ease;
 }
 
-.marii button {
-  padding: 8px;
-  margin-top: 10px;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.booking-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.booking-badge {
+  display: inline-block;
+  background: #fee2e2;
+  color: #b91c1c;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 7px 12px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+.booking-header h1 {
+  margin: 0;
+  color: #7c2d12;
+  font-size: 2.1rem;
+}
+
+.booking-hero-image {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 18px;
+  margin: 0 0 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease;
+}
+
+.booking-hero-image:hover {
+  transform: scale(1.02);
+}
+
+.booking-car-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(135deg, #fff7ed, #fff1f2);
+  border: 1px solid #fed7aa;
+  border-radius: 18px;
+  padding: 18px 20px;
+  margin-bottom: 18px;
+}
+
+.booking-label {
+  margin: 0 0 6px;
+  color: #7c2d12;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.booking-car-box h2 {
+  margin: 0;
+  color: #111827;
+  font-size: 1.6rem;
+}
+
+.booking-price-box {
+  text-align: center;
+  background: #7f1d1d;
+  color: white;
+  border-radius: 14px;
+  padding: 12px 16px;
+  min-width: 110px;
+}
+
+.booking-price-box p {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.booking-price-box span {
+  font-size: 11px;
+  opacity: 0.9;
+}
+
+.booking-summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.booking-summary div {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.booking-summary span {
+  color: #475569;
+  font-size: 12px;
+}
+
+.booking-summary strong {
+  color: #0f172a;
+  font-size: 1.2rem;
+}
+
+.booking-date-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.booking-date-row label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #334155;
+  font-weight: 600;
+}
+
+.booking-date-row input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #fca5a5;
+  border-radius: 12px;
+  background: #fff;
+  color: #111827;
+  font-size: 15px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.booking-date-row input:focus {
+  outline: none;
+  border-color: #dc2626;
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.12);
+}
+
+.booking-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.booking-actions button {
+  flex: 1;
+  padding: 13px 16px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
   cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.marii h3 {
-  margin-top: 15px;
+.booking-actions button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.1);
+}
+
+.secondary-btn {
+  background: #fff1f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  color: white;
 }
 
 /* PAYMENT PAGE */
 .payment {
   text-align: center;
   padding-top: 50px;
-  background-image: url("/couple.jpg");
+  background-image: linear-gradient(rgba(10, 10, 12, 0.72), rgba(10, 10, 12, 0.72)), url("/showroom.jpg");
   background-size: cover;
   background-position: center;
   min-height: 100vh;
-  background-color: #650ea3;
+  background-color: #0b0b0f;
 }
 
 .payment-box {
-  border: 1px solid black;
-  width: 300px;
+  border: 1px solid rgba(255, 95, 95, 0.7);
+  width: 340px;
   margin: auto;
-  padding: 20px;
-  background: rgba(192, 90, 90, 0.9);
-  border-radius: 10px;
+  padding: 24px;
+  background: rgba(18, 18, 20, 0.8);
+  box-shadow: 0 0 20px rgba(255, 80, 80, 0.25);
+  border-radius: 16px;
+  color: #f8fafc;
+}
+.payment h1 {
+  color: #ff4d4d;
+  text-shadow: 0 0 12px rgba(255, 90, 90, 0.5);
+}
+.payment-box h2 {
+  color: #ff8a8a;
+}
+.payment-box h3 {
+  color: #ff6b6b;
 }
 
+.payment-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+}
 
 .method {
-  display: block;
-  border: 1px solid gray;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 6px;
-  background: white;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #f8fafc;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
+.method:hover {
+  border-color: rgba(255, 110, 110, 0.8);
+  background: rgba(255, 90, 90, 0.08);
+  transform: translateY(-1px);
+}
+
+.method input {
+  width: 18px;
+  height: 18px;
+  accent-color: #ff4d4d;
+}
+
+.method:has(input:checked) {
+  border-color: #ff5c5c;
+  background: rgba(255, 70, 70, 0.12);
+  box-shadow: 0 0 12px rgba(255, 90, 90, 0.25);
+}
 
 .pay-btn {
-  padding: 8px 15px;
-  margin-top: 10px;
+  width: 100%;
+  padding: 12px 15px;
+  margin-top: 12px;
   cursor: pointer;
-  background: black;
+  background: linear-gradient(135deg, #ff4d4d, #c62828);
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 12px;
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pay-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(255, 80, 80, 0.25);
 }
 .login{
   padding-left: 1150px;

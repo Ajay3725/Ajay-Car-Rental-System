@@ -2,6 +2,17 @@ import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 
+interface BookingEntry {
+  id: number;
+  name: string;
+  total: number;
+  payment?: string;
+}
+
+interface BookingData {
+  booking: BookingEntry[];
+}
+
 export async function POST(req: Request) {
 
   try {
@@ -10,7 +21,7 @@ export async function POST(req: Request) {
 
     const file = path.join(process.cwd(), "data/booking.json");
 
-    let data = { booking: [] };
+    let data: BookingData = { booking: [] };
 
     if (fs.existsSync(file)) {
 

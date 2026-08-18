@@ -7,7 +7,7 @@
       "image": "/hyundai.avif",
       "mileage": "25 KM",
       "seats": "4",
-      "rating": "4.5 ⭐⭐⭐"
+      "rating": "4.5"
     },
     {
       "id": 3,
@@ -16,16 +16,16 @@
       "image": "/Kia.avif",
       "mileage": "25 KM",
       "seats": "5",
-      "rating": "4.5 ⭐⭐⭐⭐⭐"
+      "rating": "4.7"
     },
     {
       "id": 4,
-      "namce": "Honda City",
-      "price": "200",
+      "name": "Honda City",
+      "price": 2000,
       "image": "/Honda.jpg",
       "mileage": "19 KM",
       "seats": "5",
-      "rating": "4.5 ⭐⭐"
+      "rating": "4.4"
     },
     {
       "id": 5,
@@ -34,7 +34,7 @@
       "image": "/MG Hector.jpg",
       "mileage": "27 KM",
       "seats": "5",
-      "rating": "4.5 ⭐⭐⭐⭐"
+      "rating": "4.6"
     },
     {
       "id": 6,
@@ -43,7 +43,7 @@
       "image": "/MarutiSwiftt.jpg",
       "mileage": "23 KM",
       "seats": "5",
-      "rating": "4.5⭐⭐"
+      "rating": "4.3"
     },
     {
       "id": 7,
@@ -52,7 +52,7 @@
       "image": "/maruthithar.jpg",
       "mileage": "28 KM",
       "seats": "5",
-      "rating": "4.5⭐⭐⭐"
+      "rating": "4.8"
     },
     {
       "id": 8,
@@ -61,7 +61,7 @@
       "image": "/MarutiSwiftt.jpg",
       "mileage": "17 KM",
       "seats": "5",
-      "rating": "4.5⭐⭐"
+      "rating": "4.3"
     },
     {
       "id": 9,
@@ -70,7 +70,7 @@
       "image": "/Tata Nexon.jpg",
       "mileage": "24 KM",
       "seats": "5",
-      "rating": "4.5⭐⭐⭐⭐⭐"
+      "rating": "4.7"
     },
     {
       "id": 10,
@@ -79,7 +79,7 @@
       "image": "/Hyundai i20.jpg",
       "mileage": "10 KM",
       "seats": "5",
-      "rating": "4.5⭐⭐⭐⭐⭐"
+      "rating": "4.5"
     },
     {
       "id": 11,
@@ -88,7 +88,7 @@
       "image": "/KiaSonet.jpg",
       "mileage": "20 KM",
       "seats": "5",
-      "rating": "4.5⭐⭐⭐⭐⭐"
+      "rating": "4.6"
     },
     {
       "id": 12,
@@ -97,7 +97,7 @@
       "image": "/Honda Amaze.jpg",
       "mileage": "28 KM",
       "seats": "5",
-      "rating": "4.5⭐⭐⭐⭐"
+      "rating": "4.4"
     },
     {
       "id": 13,
@@ -106,7 +106,7 @@
       "image": "/MarutiBaleno.jpg",
       "mileage": "20 KM",
       "seats": "8",
-      "rating": "4.5⭐⭐⭐⭐⭐"
+      "rating": "4.5"
     },
     {
       "id": 14,
@@ -115,7 +115,7 @@
       "image": "/MarutiSwiftt.jpg",
       "mileage": "28 KM",
       "seats": "6",
-      "rating": "4.5⭐⭐⭐⭐⭐"
+      "rating": "4.3"
     },
     {
       "id": 15,
@@ -124,7 +124,7 @@
       "image": "/Mahindra XUV700.jpg",
       "mileage": "29 KM",
       "seats": "5",
-      "rating": "4.5⭐⭐⭐⭐⭐"
+      "rating": "4.8"
     },
     {
       "id": 16,
@@ -133,7 +133,7 @@
       "image": "/Toyota Glanza.jpg",
       "mileage": "27 KM",
       "seats": "5",
-      "rating": "4.5⭐⭐⭐⭐⭐"
+      "rating": "4.5"
     },
     {
       "id": 17,
@@ -142,7 +142,7 @@
       "image": "/Mahindra XUV700.jpg",
       "mileage": "20 KM",
       "seats": "5",
-      "rating": "4.5⭐⭐⭐⭐⭐"
+      "rating": "4.8"
     },
     {
       "id": 18,
@@ -151,7 +151,7 @@
       "image": "/Hyundai Venue.jpg",
       "mileage": "20 KM",
       "seats": "5",
-      "rating": "4.5⭐⭐⭐⭐⭐"
+      "rating": "4.6"
     },
     {
       "id": 19,
@@ -160,7 +160,7 @@
       "image": "/Honda Elevate.jpg",
       "mileage": "20 KM",
       "seats": "5",
-      "rating": "4.5⭐⭐⭐⭐⭐"
+      "rating": "4.7"
     },
     {
       "id": 20,
@@ -169,7 +169,7 @@
       "image": "/Hyundai Venue.jpg",
       "mileage": "28 KM",
       "seats": "5",
-      "rating": "4.5⭐⭐⭐⭐⭐"
+      "rating": "4.6"
     },
     {
       "id": 1776831279163,
@@ -178,7 +178,7 @@
       "image": "/Honda Amaze.jpg",
       "mileage": "17",
       "seats": "5",
-      "rating": "4.5"
+      "rating": "4.4"
     }
   ]
 }

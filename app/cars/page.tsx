@@ -15,11 +15,30 @@ interface Car {
   rating: string;
 }
 
+function getDiscountInfo(price: number) {
+  if (price >= 20000) {
+    return { percent: 20, label: "20% OFF" };
+  }
+  if (price >= 4000) {
+    return { percent: 10, label: "10% OFF" };
+  }
+  if (price >= 2000) {
+    return { percent: 5, label: "5% OFF" };
+  }
+  return { percent: 0, label: "" };
+}
+
 export default function Cars() {
   const [cars, setCars] = useState<Car[]>([]);
+  const [pageTitle, setPageTitle] = useState("Customer Page");
+  const [isGuest, setIsGuest] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
+    const role = localStorage.getItem("role");
+    const guestMode = role === "guest";
+    setIsGuest(guestMode);
+    setPageTitle(guestMode ? "Guest Page" : "Customer Page");
     fetch("/api/admin/cars")
       .then((res) => res.json())
       .then((data) => {
@@ -40,11 +59,15 @@ export default function Cars() {
       router.push("/");
       return;
     }
-    
+
+    const originalPrice = Number(car.price) || 0;
+    const discountInfo = getDiscountInfo(originalPrice);
+    const discountedPrice = Math.round(originalPrice * (1 - discountInfo.percent / 100));
+
     // Store booking in database via Server Action
     const result = await addBooking({
       name: car.name,
-      price: car.price,
+      price: discountedPrice,
       mileage: car.mileage,
       seats: car.seats,
       rating: car.rating,
@@ -54,7 +77,7 @@ export default function Cars() {
     if (result.success) {
       // Proceed to the booking flow if DB storage was successful
       router.push(
-        `/booking?name=${car.name}&price=${car.price}&mileage=${car.mileage}&seats=${car.seats}&rating=${car.rating}&image=${car.image}`
+        `/booking?name=${car.name}&price=${discountedPrice}&mileage=${car.mileage}&seats=${car.seats}&rating=${car.rating}&image=${car.image}`
       );
     } else {
       alert("Booking failed: " + result.message);
@@ -62,7 +85,8 @@ export default function Cars() {
   }
 
   return (
-    <div className="mudiyala">
+    <div className={`mudiyala ${isGuest ? "guest-mode" : "customer-mode"}`}>
+      <h1 className="page-heading">{pageTitle}</h1>
 
   <div className="sir">
 
@@ -91,10 +115,7 @@ export default function Cars() {
       <img src="/Tata Nexon.jpg" width="300" height="180" />
     </div>
 
-    <div className="car-item">
-      <h3>🚗 Hyundai i20 - Hatchback King</h3>
-      <img src="/Hyundai i20.jpg" width="300" height="180" />
-    </div>
+    
 
   </div>
 
@@ -104,28 +125,41 @@ export default function Cars() {
         <div className="cargrid">
           <div></div>
 
-          {cars.map((car, i) => (
-            <div key={i} className="carcard">
+          {cars.map((car, i) => {
+            const originalPrice = Number(car.price) || 0;
+            const discountInfo = getDiscountInfo(originalPrice);
+            const discountedPrice = Math.round(originalPrice * (1 - discountInfo.percent / 100));
 
-              <img
-                src={car.image?.trim() ? car.image : "/default-car.png"}
-                alt={car.name}
-                className="car-image"
-              />
+            return (
+              <div key={i} className="carcard">
 
-              <h3>{car.name}</h3>
+                <img
+                  src={car.image?.trim() ? car.image : "/abcdef.jpg"}
+                  alt={car.name}
+                  className="car-image"
+                  onError={(e) => {
+                    e.currentTarget.src = "/abcdef.jpg";
+                  }}
+                />
 
-              <p>💰 ₹{car.price} / day</p>
-              <p>⛽ Mileage: {car.mileage}</p>
-              <p>👥 Seats: {car.seats}</p>
-              <p>⭐ Rating: {car.rating}</p>
+                <h3>{car.name}</h3>
 
-              <button onClick={() => handleBook(car)}>
-                Book
-              </button>
+                <div className="price-tag">
+                  <span className="old-price">₹{originalPrice}</span>
+                  <span className="discount-badge">{discountInfo.label}</span>
+                </div>
+                <p className="new-price">₹{discountedPrice} / day</p>
+                <p>⛽ Mileage: {car.mileage}</p>
+                <p>👥 Seats: {car.seats}</p>
+                {!isGuest && <p>⭐ Rating: {car.rating}</p>}
 
-            </div>
-          ))}
+                <button onClick={() => handleBook(car)}>
+                  Book
+                </button>
+
+              </div>
+            );
+          })}
 
         </div>
       </div>
